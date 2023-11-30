@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import Sidebar from "../components/Sidebar";
-import { data } from "../data";
+import Sidebar from "../../components/Sidebar";
+import { data } from "../../data";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 export default function Home() {
 	return (
-		<div className='grid grid-cols-8'>
+		<div className='grid grid-cols-10'>
 			<Sidebar />
 			<HomeContent />
 		</div>
@@ -16,7 +16,7 @@ export default function Home() {
 const HomeContent = () => {
 	return (
 		<>
-			<div className='px-5 lg:py-14 col-span-full lg:col-span-6 h-screen overflow-auto scroll'>
+			<div className='px-5 lg:py-14 col-span-full lg:col-span-8 h-screen overflow-auto scroll'>
 				<h1 className='text-4xl text-center lg:text-6xl lg:text-left font-poppins font-extrabold text-gray-800 my-10'>Content</h1>
 				{data.map((d) => (
 					<Element key={d.id} {...d} />
