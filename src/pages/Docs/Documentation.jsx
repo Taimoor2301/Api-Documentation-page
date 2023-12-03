@@ -17,9 +17,12 @@ const HomeContent = () => {
 	return (
 		<>
 			<div className='px-5 lg:py-14 col-span-full lg:col-span-8 h-screen overflow-auto scroll'>
-				<h1 className='text-4xl text-center lg:text-6xl lg:text-left font-poppins font-extrabold text-gray-800 my-10'>Content</h1>
+				<h1 className='text-2xl text-center lg:text-6xl lg:text-left font-poppins md:pl-10 font-extrabold text-gray-800 my-10'>Documentation</h1>
 				{data.map((d) => (
-					<Element key={d.id} {...d} />
+					<Element
+						key={d.id}
+						{...d}
+					/>
 				))}
 			</div>
 		</>
@@ -40,7 +43,9 @@ const Element = ({ title, description, javascript, python, php, id }) => {
 		}, 4000);
 	}
 	return (
-		<div className='flex flex-col gap-3.5 lg:py-14 py-4 lg:px-10 border-b-2' id={id}>
+		<div
+			className='flex flex-col gap-3.5 lg:py-14 py-4 lg:px-10 border-b-2'
+			id={id}>
 			<h1 className='text-xl lg:text-3xl underline underline-offset-8 font-semibold tracking-wide font-poppins text-gray-700'>{title}</h1>
 			<div className='flex gap-2 py-1.5 px-2'>
 				{codeOptions.map((o) => (
@@ -64,7 +69,12 @@ const Element = ({ title, description, javascript, python, php, id }) => {
 						{!copy ? "Copy Code" : "Copied"}
 					</span>
 				</div>
-				<SyntaxHighlighter style={atomOneDark} wrapLongLines='true' wrapLines='true' language={activeCode} customStyle={{ padding: "25px" }}>
+				<SyntaxHighlighter
+					style={atomOneDark}
+					wrapLongLines='true'
+					wrapLines='true'
+					language={activeCode}
+					customStyle={{ padding: "25px" }}>
 					{code}
 				</SyntaxHighlighter>
 			</div>

@@ -12,7 +12,7 @@ export default function Sidebar() {
 
 	return (
 		<>
-			<div className='text-3xl pl-3 pb-2 py-5 sticky top-0 bg-white/80 backdrop-blur-md w-screen lg:hidden'>
+			<div className='text-3xl fixed bottom-5 left-5 p-2 rounded-lg bg-purple-500 text-white lg:hidden'>
 				<FaBars onClick={() => setOpensidebar(true)} />
 			</div>
 
@@ -20,13 +20,21 @@ export default function Sidebar() {
 				className={`${
 					openSidebar ? "w-full" : "w-0"
 				} lg:w-full transition-all duration-500 overflow-hidden lg:relative absolute inset-0 lg:col-span-2 border h-screen bg-gray-50 font-poppins`}>
-				<h1 className='text-2xl py-5 px-5 font-semibold text-gray-700 flex justify-between'>
-					Topics <ImCross className='lg:hidden' onClick={() => setOpensidebar(false)} />{" "}
+				<h1 className='text-2xl pt-5 px-5 font-semibold text-gray-700 flex justify-between'>
+					Content{" "}
+					<ImCross
+						className='lg:hidden'
+						onClick={() => setOpensidebar(false)}
+					/>{" "}
 				</h1>
 
 				<div className='flex flex-col gap-4 p-5 overflow-y-auto max-h-full scroll py-5'>
 					{data.map((t) => (
-						<TopicName {...t} key={t.id} setOpensidebar={setOpensidebar} />
+						<TopicName
+							{...t}
+							key={t.id}
+							setOpensidebar={setOpensidebar}
+						/>
 					))}
 				</div>
 			</div>
@@ -37,7 +45,7 @@ export default function Sidebar() {
 const TopicName = ({ title, id, setOpensidebar }) => {
 	return (
 		<a
-			className='hover:text-white lg:p-3 py-2 hover:bg-purple-500 duration-300 transition-all hover:translate-x-2 lg:rounded-lg border-b-2 min-w-max'
+			className=' lg:p-3 py-2 hover:bg-purple-300 duration-300 transition-all hover:translate-x-1 lg:rounded-lg border-b-2 min-w-max'
 			href={`#${id}`}
 			onClick={() => setOpensidebar(false)}>
 			{title}
