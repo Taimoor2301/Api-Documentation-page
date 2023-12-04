@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaArrowRight } from "react-icons/fa";
 
 const ProfileTab = () => {
 	const [data, setData] = useState(DataTemplate);
@@ -45,9 +46,9 @@ const ProfileTab = () => {
 			/>
 
 			<button
-				className='text-lg bg-primary text-white border-2 hover:border-primary border-transparent hover:bg-white hover:text-primary col-span-1 font-righteous py-1.5 rounded-md transition-all duration-500'
+				className='text-lg bg-gray-800 hover:bg-purple-500 text-white col-span-1 font-poppins py-1.5 rounded-md transition-all duration-500 group flex items-center gap-2 justify-center'
 				onClick={() => console.log(data)}>
-				Update
+				Update <FaArrowRight className='group-hover:translate-x-1 transition-all' />
 			</button>
 		</div>
 	);
