@@ -4,6 +4,8 @@ import ListingTab from "./Tabs/ListingTab";
 import HistoryTab from "./Tabs/HistoryTab";
 import WalletTab from "./Tabs/WalletTab";
 import { GrEdit } from "react-icons/gr";
+import { FaList, FaHistory, FaWallet } from "react-icons/fa";
+import { IoMdPerson } from "react-icons/io";
 
 const Profile = () => {
 	const [activeTab, setActiveTab] = useState("Profile");
@@ -98,20 +100,21 @@ const Profile = () => {
 export default Profile;
 
 const buttons = [
-	{ name: "Profile", el: ProfileTab },
-	{ name: "Listing", el: ListingTab },
-	{ name: "History", el: HistoryTab },
-	{ name: "Wallet", el: WalletTab },
+	{ name: "Profile", el: ProfileTab, Icon: IoMdPerson },
+	{ name: "Listing", el: ListingTab, Icon: FaList },
+	{ name: "History", el: HistoryTab, Icon: FaHistory },
+	{ name: "Wallet", el: WalletTab, Icon: FaWallet },
 ];
 
-function TabButton({ name, active, onclick }) {
+function TabButton({ name, active, onclick, Icon }) {
 	return (
 		<button
 			onClick={() => onclick(name)}
 			className={`${
 				active === name && "bg-purple-500 text-white"
-			} font-poppins md:text-lg text-xs rounded-lg font-medium transition-all duration-500 py-2 px-5`}>
+			} font-poppins md:text-lg text-xs rounded-lg font-medium transition-all duration-500 sm:py-2 py-1 sm:px-5 px-2 flex items-center justify-center gap-2`}>
 			{name}
+			{<Icon />}
 		</button>
 	);
 }

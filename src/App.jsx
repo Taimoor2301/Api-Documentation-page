@@ -8,6 +8,9 @@ import Signup from "./pages/auth/Signup";
 import Privacy from "./pages/privacy policy/Privacy";
 import Dashboard from "./pages/profile/Dashboard";
 import ForgetPassword from "./pages/auth/ForgetPassword";
+import EnterVarificationCode from "./pages/auth/EnterVarificationCode";
+import NewPassword from "./pages/auth/NewPassword";
+import AuthLayout from "./pages/auth/AuthLayout";
 
 export default function App() {
 	return (
@@ -18,14 +21,7 @@ export default function App() {
 					path='/docs'
 					element={<Documentation />}
 				/>
-				<Route
-					path='/login'
-					element={<Login />}
-				/>
-				<Route
-					path='/signup'
-					element={<Signup />}
-				/>
+
 				<Route
 					path='/privacy'
 					element={<Privacy />}
@@ -34,10 +30,31 @@ export default function App() {
 					path='/dashboard'
 					element={<Dashboard />}
 				/>
+
 				<Route
-					path='/forgetpassword'
-					element={<ForgetPassword />}
-				/>
+					path='/auth'
+					element={<AuthLayout />}>
+					<Route
+						path='login'
+						element={<Login />}
+					/>
+					<Route
+						path='signup'
+						element={<Signup />}
+					/>
+					<Route
+						path='forgetpassword'
+						element={<ForgetPassword />}
+					/>
+					<Route
+						path='verifycode'
+						element={<EnterVarificationCode />}
+					/>
+					<Route
+						path='newpassword'
+						element={<NewPassword />}
+					/>
+				</Route>
 
 				<Route
 					path='*'

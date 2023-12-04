@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import PaymentModel from "../Modal/PaymentModel";
 import { AnimatePresence } from "framer-motion";
+import { TbRecharging } from "react-icons/tb";
+import { MdOutlineLoop } from "react-icons/md";
 
 const WalletTab = () => {
 	const balance = 9876554.33;
@@ -26,12 +28,12 @@ const WalletTab = () => {
 
 			<div className='font-righteous col-span-full flex flex-col items-center gap-4'>
 				<button
-					className='text-lg text-purple-500 border-2 border-purple-500 hover:bg-purple-500 hover:text-white font-poppins py-1.5 w-44 rounded-md transition-all duration-500'
+					className='text-lg text-purple-500 border-2 border-purple-500 hover:bg-purple-500 hover:text-white font-poppins py-1.5 w-44 rounded-md transition-all duration-500 flex gap-2 items-center justify-center'
 					onClick={() => setOpenModel(true)}>
-					Recharge
+					Recharge <TbRecharging />
 				</button>
-				<button className='text-lg bg-gray-800 text-white border-2 hover:border-purple-500 border-transparent hover:bg-purple-500 hover:text-white font-poppins py-1.5 w-44 rounded-md transition-all duration-500'>
-					Convert
+				<button className='text-lg bg-gray-800 text-white border-2 hover:border-purple-500 border-transparent hover:bg-purple-500 hover:text-white font-poppins py-1.5 w-44 rounded-md transition-all duration-500 flex items-center justify-center gap-2'>
+					Convert <MdOutlineLoop />
 				</button>
 			</div>
 		</div>
