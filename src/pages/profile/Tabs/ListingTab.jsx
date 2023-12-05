@@ -25,7 +25,7 @@ const ListingTab = () => {
 			<AnimatePresence>{openModel && <AddNewModel closeModel={setOpenModel} />}</AnimatePresence>
 
 			<div className='flex flex-col font-poppins'>
-				<div className='py-4 px-2 border-b text-xs flex items-center gap-5 w-full bg-purple-500 transition-all rounded-lg text-white'>
+				<div className='py-4 px-2 border-b text-xs flex items-center gap-5 w-full bg-purple-500 transition-all rounded-lg text-white mb-5'>
 					<span className='font-semibold'>S.no</span>
 					<span className='w-52 font-semibold'>Owner Name</span>
 					<span className='w-full text-end font-medium underline'>Type</span>
@@ -55,7 +55,7 @@ const dummyData = [
 const ListElement = ({ type, id, owner, index }) => {
 	return (
 		<Link
-			to={`/listing/file/${id}`}
+			to={`/details/${id}`}
 			className='py-4 px-2 border-b flex items-center gap-5 w-full hover:bg-purple-300 transition-all rounded-lg hover:text-white text-xs'>
 			<span className='w-12 md:w-8 bg-purple-500 text-white text-sm flex justify-center items-center aspect-square rounded-full'>{index + 1}</span>
 			<span className='w-52 font-semibold'>{owner}</span>

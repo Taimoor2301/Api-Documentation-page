@@ -5,7 +5,7 @@ import { MdOutlineMenuOpen } from "react-icons/md";
 export default function Navbar() {
 	const [navOpen, setNavOpen] = useState(false);
 	return (
-		<div className='shadow sticky top-0 bg-white z-[99999]'>
+		<div className='sticky top-0 bg-gray-100 z-[99999]'>
 			<div className='pl-5 py-4 lg:hidden'>
 				<MdOutlineMenuOpen
 					onClick={() => setNavOpen(!navOpen)}
@@ -14,7 +14,7 @@ export default function Navbar() {
 			</div>
 			<div className={`overflow-hidden transition-all duration-500 ${navOpen ? "max-h-screen" : "max-h-0"} lg:max-h-[100px]`}>
 				<nav
-					className={`max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-10 font-poppins text-base font-medium py-5 text-gray-700`}>
+					className={`max-w-7xl bg-white rounded-xl my-2 mx-auto flex flex-col lg:flex-row items-center justify-center gap-10 font-poppins text-base font-medium py-5 text-gray-700`}>
 					<NavLink
 						onClick={() => setNavOpen(!navOpen)}
 						to='/'>

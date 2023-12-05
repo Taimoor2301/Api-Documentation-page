@@ -11,6 +11,8 @@ import ForgetPassword from "./pages/auth/ForgetPassword";
 import EnterVarificationCode from "./pages/auth/EnterVarificationCode";
 import NewPassword from "./pages/auth/NewPassword";
 import AuthLayout from "./pages/auth/AuthLayout";
+import Detail from "./pages/detail/Detail";
+import Home from "./pages/Home/Home";
 
 export default function App() {
 	return (
@@ -20,6 +22,11 @@ export default function App() {
 				<Route
 					path='/docs'
 					element={<Documentation />}
+				/>
+
+				<Route
+					path='/'
+					element={<Home />}
 				/>
 
 				<Route
@@ -55,6 +62,11 @@ export default function App() {
 						element={<NewPassword />}
 					/>
 				</Route>
+
+				<Route
+					path='/details/:id'
+					element={<Detail />}
+				/>
 
 				<Route
 					path='*'
